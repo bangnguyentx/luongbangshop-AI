@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+  <title>Bang Store | Trưng bày sản phẩm</title>
+  <meta
+    name="description"
+    content="Website trưng bày sản phẩm mobile-first, hiện đại, tối ưu cho điện thoại."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <a href="#home" class="brand">
+          <div class="brand-badge">B</div>
+          <div class="brand-text">
+            <strong>Bang Store</strong>
+            <span>Trưng bày sản phẩm</span>
+          </div>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Mở menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="container mobile-menu-inner">
+          <a href="#home" class="mobile-link">Trang chủ</a>
+          <a href="#categories" class="mobile-link">Danh mục</a>
+          <a href="#products" class="mobile-link">Sản phẩm</a>
+          <a href="#about" class="mobile-link">Giới thiệu</a>
+          <a href="#contact" class="mobile-link">Liên hệ</a>
+          <a
+            class="mobile-cta"
+            href="https://m.facebook.com/bang.nguyen.17040/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Nhắn admin
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="hero-pill">Mobile-first • Gọn • Sang • Dễ nhìn</div>
+            <h1>
+              Website trưng bày sản phẩm
+              <span>đẹp trên điện thoại</span>
+            </h1>
+            <p>
+              Giao diện tối ưu cho màn hình di động, thao tác nhanh, màu sắc hiện
+              đại, trình bày sản phẩm rõ ràng. Khách chỉ cần bấm sản phẩm để liên
+              hệ admin kèm mã sản phẩm.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#products" class="btn btn-primary">Xem sản phẩm</a>
+              <a
+                href="https://m.facebook.com/bang.nguyen.17040/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+              >
+                Liên hệ admin
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="mini-stat">
+                <strong>100%</strong>
+                <span>Tối ưu mobile</span>
+              </div>
+              <div class="mini-stat">
+                <strong>24/7</strong>
+                <span>Nhận tin nhắn</span>
+              </div>
+              <div class="mini-stat">
+                <strong>Nhanh</strong>
+                <span>Tải nhẹ, mượt</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="phone-mockup">
+              <div class="phone-top">
+                <span>Bang Store</span>
+                <span>09:41</span>
+              </div>
+
+              <div class="phone-search">
+                <input
+                  type="text"
+                  id="searchInput"
+                  placeholder="Tìm sản phẩm..."
+                />
+              </div>
+
+              <div class="phone-tags" id="categoryFilters">
+                <button class="tag active" data-filter="all">Tất cả</button>
+                <button class="tag" data-filter="hot">Bán chạy</button>
+                <button class="tag" data-filter="new">Mới</button>
+                <button class="tag" data-filter="decor">Decor</button>
+              </div>
+
+              <div class="phone-list" id="heroProductList">
+                <article class="mini-product">
+                  <div class="mini-thumb">01</div>
+                  <div class="mini-info">
+                    <h4>Set decor bàn làm việc</h4>
+                    <p>Mã: BANG-001</p>
+                  </div>
+                </article>
+                <article class="mini-product">
+                  <div class="mini-thumb">02</div>
+                  <div class="mini-info">
+                    <h4>Đèn ngủ mini</h4>
+                    <p>Mã: BANG-002</p>
+                  </div>
+                </article>
+                <article class="mini-product">
+                  <div class="mini-thumb">03</div>
+                  <div class="mini-info">
+                    <h4>Kệ trưng bày nhỏ</h4>
+                    <p>Mã: BANG-003</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section categories" id="categories">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Danh mục nổi bật</span>
+              <h2>Chọn nhanh theo nhóm sản phẩm</h2>
+            </div>
+            <p>
+              Bố cục rõ ràng, bấm chọn nhanh trên điện thoại, dễ kéo xem từng nhóm.
+            </p>
+          </div>
+
+          <div class="category-grid">
+            <button class="category-card" data-scroll="products" data-filter-target="all">
+              <span class="category-icon">✨</span>
+              <strong>Tất cả</strong>
+              <small>Xem toàn bộ sản phẩm</small>
+            </button>
+
+            <button class="category-card" data-scroll="products" data-filter-target="hot">
+              <span class="category-icon">🔥</span>
+              <strong>Bán chạy</strong>
+              <small>Sản phẩm được quan tâm</small>
+            </button>
+
+            <button class="category-card" data-scroll="products" data-filter-target="new">
+              <span class="category-icon">🆕</span>
+              <strong>Hàng mới</strong>
+              <small>Mẫu mới cập nhật</small>
+            </button>
+
+            <button class="category-card" data-scroll="products" data-filter-target="decor">
+              <span class="category-icon">🛋️</span>
+              <strong>Decor</strong>
+              <small>Trang trí không gian</small>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section products-section" id="products">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Danh sách sản phẩm</span>
+              <h2>Sản phẩm nổi bật của shop</h2>
+            </div>
+            <p>
+              Khi khách bấm vào sản phẩm, hệ thống hiện mã sản phẩm và dẫn tới
+              Facebook admin để khách nhắn tin nhanh.
+            </p>
+          </div>
+
+          <div class="toolbar">
+            <div class="search-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M10.5 18a7.5 7.5 0 1 1 5.303-2.197L21 21l-1.5 1.5-5.197-5.197A7.47 7.47 0 0 1 10.5 18Zm0-2.1a5.4 5.4 0 1 0 0-10.8 5.4 5.4 0 0 0 0 10.8Z"
+                />
+              </svg>
+              <input
+                type="text"
+                id="mainSearchInput"
+                placeholder="Tìm theo tên hoặc mã sản phẩm..."
+              />
+            </div>
+
+            <div class="filter-row" id="mainFilterRow">
+              <button class="chip active" data-filter="all">Tất cả</button>
+              <button class="chip" data-filter="hot">Bán chạy</button>
+              <button class="chip" data-filter="new">Mới</button>
+              <button class="chip" data-filter="decor">Decor</button>
+            </div>
+          </div>
+
+          <div class="product-grid" id="productGrid">
+            <article
+              class="product-card"
+              data-category="hot decor"
+              data-name="Set decor bàn làm việc"
+              data-code="BANG-001"
+            >
+              <div class="product-image gradient-1">
+                <span class="badge badge-hot">Bán chạy</span>
+                <div class="product-image-text">BANG-001</div>
+              </div>
+              <div class="product-body">
+                <div class="product-topline">
+                  <span class="product-category">Decor</span>
+                  <span class="product-code">#BANG-001</span>
+                </div>
+                <h3>Set decor bàn làm việc</h3>
+                <p>
+                  Phù hợp setup góc học tập, bàn làm việc, chụp ảnh sản phẩm nhỏ.
+                </p>
+                <div class="product-footer">
+                  <button
+                    class="btn-card"
+                    data-product="Set decor bàn làm việc"
+                    data-code="BANG-001"
+                  >
+                    Xem chi tiết
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="product-card"
+              data-category="new decor"
+              data-name="Đèn ngủ mini"
+              data-code="BANG-002"
+            >
+              <div class="product-image gradient-2">
+                <span class="badge badge-new">Mới</span>
+                <div class="product-image-text">BANG-002</div>
+              </div>
+              <div class="product-body">
+                <div class="product-topline">
+                  <span class="product-category">Decor</span>
+                  <span class="product-code">#BANG-002</span>
+                </div>
+                <h3>Đèn ngủ mini</h3>
+                <p>
+                  Thiết kế nhỏ gọn, hợp không gian phòng ngủ, góc bàn hoặc kệ tủ.
+                </p>
+                <div class="product-footer">
+                  <button
+                    class="btn-card"
+                    data-product="Đèn ngủ mini"
+                    data-code="BANG-002"
+                  >
+                    Xem chi tiết
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="product-card"
+              data-category="decor"
+              data-name="Kệ trưng bày nhỏ"
+              data-code="BANG-003"
+            >
+              <div class="product-image gradient-3">
+                <div class="product-image-text">BANG-003</div>
+              </div>
+              <div class="product-body">
+                <div class="product-topline">
+                  <span class="product-category">Decor</span>
+                  <span class="product-code">#BANG-003</span>
+                </div>
+                <h3>Kệ trưng bày nhỏ</h3>
+                <p>
+                  Dễ phối với bàn học, bàn make up, góc làm việc và không gian nhỏ.
+                </p>
+                <div class="product-footer">
+                  <button
+                    class="btn-card"
+                    data-product="Kệ trưng bày nhỏ"
+                    data-code="BANG-003"
+                  >
+                    Xem chi tiết
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="product-card"
+              data-category="hot"
+              data-name="Hộp quà mini"
+              data-code="BANG-004"
+            >
+              <div class="product-image gradient-4">
+                <span class="badge badge-hot">Hot</span>
+                <div class="product-image-text">BANG-004</div>
+              </div>
+              <div class="product-body">
+                <div class="product-topline">
+                  <span class="product-category">Quà tặng</span>
+                  <span class="product-code">#BANG-004</span>
+                </div>
+                <h3>Hộp quà mini</h3>
+                <p>
+                  Kiểu dáng gọn, đẹp, thích hợp tặng quà nhỏ hoặc decor bàn học.
+                </p>
+                <div class="product-footer">
+                  <button
+                    class="btn-card"
+                    data-product="Hộp quà mini"
+                    data-code="BANG-004"
+                  >
+                    Xem chi tiết
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="product-card"
+              data-category="new"
+              data-name="Móc khóa custom"
+              data-code="BANG-005"
+            >
+              <div class="product-image gradient-5">
+                <span class="badge badge-new">New</span>
+                <div class="product-image-text">BANG-005</div>
+              </div>
+              <div class="product-body">
+                <div class="product-topline">
+                  <span class="product-category">Phụ kiện</span>
+                  <span class="product-code">#BANG-005</span>
+                </div>
+                <h3>Móc khóa custom</h3>
+                <p>
+                  Mẫu trẻ trung, nhỏ gọn, phù hợp làm quà hoặc treo balo, chìa khóa.
+                </p>
+                <div class="product-footer">
+                  <button
+                    class="btn-card"
+                    data-product="Móc khóa custom"
+                    data-code="BANG-005"
+                  >
+                    Xem chi tiết
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="product-card"
+              data-category="decor hot"
+              data-name="Khung ảnh mini"
+              data-code="BANG-006"
+            >
+              <div class="product-image gradient-6">
+                <span class="badge badge-hot">Ưa thích</span>
+                <div class="product-image-text">BANG-006</div>
+              </div>
+              <div class="product-body">
+                <div class="product-topline">
+                  <span class="product-category">Decor</span>
+                  <span class="product-code">#BANG-006</span>
+                </div>
+                <h3>Khung ảnh mini</h3>
+                <p>
+                  Phù hợp trưng bày bàn làm việc, góc decor cá nhân, chụp hình đẹp.
+                </p>
+                <div class="product-footer">
+                  <button
+                    class="btn-card"
+                    data-product="Khung ảnh mini"
+                    data-code="BANG-006"
+                  >
+                    Xem chi tiết
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="empty-state" id="emptyState" hidden>
+            <div class="empty-icon">🔎</div>
+            <h3>Không tìm thấy sản phẩm phù hợp</h3>
+            <p>Hãy thử từ khóa khác hoặc bấm lại mục “Tất cả”.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="container">
+          <div class="about-card">
+            <div class="about-content">
+              <span class="section-kicker">Giới thiệu</span>
+              <h2>Giao diện thiết kế ưu tiên người dùng điện thoại</h2>
+              <p>
+                Mọi thành phần đều được dàn theo chiều dọc, nút bấm lớn, khoảng cách
+                thoáng, chữ dễ đọc, thao tác bằng một tay thuận tiện hơn. Phù hợp
+                website trưng bày sản phẩm đơn giản, hiện đại và gọn mắt.
+              </p>
+
+              <div class="feature-list">
+                <div class="feature-item">
+                  <span>✓</span>
+                  <p>Header gọn, menu mobile trượt mượt</p>
+                </div>
+                <div class="feature-item">
+                  <span>✓</span>
+                  <p>Card sản phẩm hiện đại, bo góc đẹp</p>
+                </div>
+                <div class="feature-item">
+                  <span>✓</span>
+                  <p>Bộ lọc và tìm kiếm dễ dùng trên điện thoại</p>
+                </div>
+                <div class="feature-item">
+                  <span>✓</span>
+                  <p>Bấm sản phẩm để liên hệ admin ngay</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-side">
+              <div class="about-box">
+                <strong>Gợi ý sử dụng</strong>
+                <p>
+                  Sau này bạn chỉ cần thay tên sản phẩm, mã sản phẩm, mô tả và link
+                  admin là xong. Không cần backend vẫn dùng tốt để trưng bày.
+                </p>
+              </div>
+              <div class="about-box highlight-box">
+                <strong>Link liên hệ hiện tại</strong>
+                <p class="small-text">
+                  https://m.facebook.com/bang.nguyen.17040/
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container">
+          <div class="contact-card">
+            <span class="section-kicker">Liên hệ nhanh</span>
+            <h2>Khách chỉ cần nhắn admin kèm mã sản phẩm</h2>
+            <p>
+              Ví dụ: “Em muốn hỏi sản phẩm mã BANG-001”. Cách này gọn, dễ quản lý,
+              không cần giỏ hàng hay thanh toán phức tạp.
+            </p>
+
+            <div class="contact-actions">
+              <a
+                href="https://m.facebook.com/bang.nguyen.17040/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                Mở Facebook admin
+              </a>
+              <a href="#products" class="btn btn-secondary">Xem lại sản phẩm</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Bang Store</strong>
+          <p>Website trưng bày sản phẩm tối ưu cho điện thoại.</p>
+        </div>
+        <a
+          href="https://m.facebook.com/bang.nguyen.17040/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-link"
+        >
+          Liên hệ admin
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal-backdrop" id="productModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modalClose" aria-label="Đóng">×</button>
+      <div class="modal-label">Thông tin sản phẩm</div>
+      <h3 id="modalProductName">Tên sản phẩm</h3>
+      <p class="modal-desc">
+        Nhấn nút bên dưới để liên hệ admin qua Facebook và gửi đúng mã sản phẩm.
+      </p>
+
+      <div class="modal-code-box">
+        <span>Mã sản phẩm</span>
+        <strong id="modalProductCode">BANG-000</strong>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" id="copyCodeBtn">Sao chép mã</button>
+        <a
+          href="https://m.facebook.com/bang.nguyen.17040/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+          id="contactAdminBtn"
+        >
+          Nhắn admin
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileLinks = document.querySelectorAll(".mobile-link, .mobile-cta");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.classList.toggle("active");
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuToggle.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    const productGrid = document.getElementById("productGrid");
+    const productCards = [...document.querySelectorAll(".product-card")];
+    const filterButtons = [...document.querySelectorAll("[data-filter]")];
+    const mainSearchInput = document.getElementById("mainSearchInput");
+    const searchInput = document.getElementById("searchInput");
+    const emptyState = document.getElementById("emptyState");
+
+    let currentFilter = "all";
+    let currentKeyword = "";
+
+    function normalizeText(text) {
+      return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function applyFilterAndSearch() {
+      let visibleCount = 0;
+      const keyword = normalizeText(currentKeyword);
+
+      productCards.forEach((card) => {
+        const categories = card.dataset.category || "";
+        const name = card.dataset.name || "";
+        const code = card.dataset.code || "";
+
+        const matchFilter =
+          currentFilter === "all" || categories.includes(currentFilter);
+
+        const matchKeyword =
+          !keyword ||
+          normalizeText(name).includes(keyword) ||
+          normalizeText(code).includes(keyword);
+
+        if (matchFilter && matchKeyword) {
+          card.style.display = "";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      emptyState.hidden = visibleCount !== 0;
+    }
+
+    function updateActiveButtons(filter) {
+      filterButtons.forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.filter === filter);
+      });
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        currentFilter = button.dataset.filter;
+        updateActiveButtons(currentFilter);
+        applyFilterAndSearch();
+      });
+    });
+
+    function syncSearch(value) {
+      currentKeyword = value.trim();
+      mainSearchInput.value = value;
+      searchInput.value = value;
+      applyFilterAndSearch();
+    }
+
+    mainSearchInput.addEventListener("input", (e) => {
+      syncSearch(e.target.value);
+    });
+
+    searchInput.addEventListener("input", (e) => {
+      syncSearch(e.target.value);
+    });
+
+    const categoryCards = document.querySelectorAll(".category-card");
+    categoryCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const targetId = card.dataset.scroll;
+        const targetFilter = card.dataset.filterTarget;
+
+        if (targetFilter) {
+          currentFilter = targetFilter;
+          updateActiveButtons(currentFilter);
+          applyFilterAndSearch();
+        }
+
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+
+    const modal = document.getElementById("productModal");
+    const modalClose = document.getElementById("modalClose");
+    const modalProductName = document.getElementById("modalProductName");
+    const modalProductCode = document.getElementById("modalProductCode");
+    const copyCodeBtn = document.getElementById("copyCodeBtn");
+    const contactAdminBtn = document.getElementById("contactAdminBtn");
+
+    let selectedCode = "";
+    let selectedName = "";
+
+    function openModal(name, code) {
+      selectedName = name;
+      selectedCode = code;
+      modalProductName.textContent = name;
+      modalProductCode.textContent = code;
+
+      const message = encodeURIComponent(
+        `Chào admin, mình muốn hỏi sản phẩm ${name} - mã ${code}`
+      );
+      contactAdminBtn.href = `https://m.facebook.com/bang.nguyen.17040/?ref=bookmarks&message=${message}`;
+
+      modal.classList.add("show");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeModal() {
+      modal.classList.remove("show");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    document.querySelectorAll(".btn-card").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        openModal(btn.dataset.product, btn.dataset.code);
+      });
+    });
+
+    modalClose.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+    });
+
+    copyCodeBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(selectedCode);
+        copyCodeBtn.textContent = "Đã sao chép";
+        setTimeout(() => {
+          copyCodeBtn.textContent = "Sao chép mã";
+        }, 1400);
+      } catch (error) {
+        copyCodeBtn.textContent = selectedCode;
+        setTimeout(() => {
+          copyCodeBtn.textContent = "Sao chép mã";
+        }, 1400);
+      }
+    });
+
+    applyFilterAndSearch();
+  </script>
+</body>
+</html>
