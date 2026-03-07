@@ -2,490 +2,295 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  />
-  <title>Bang Store | Trưng bày sản phẩm</title>
-  <meta
-    name="description"
-    content="Website trưng bày sản phẩm mobile-first, hiện đại, tối ưu cho điện thoại."
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Bang Store</title>
+  <meta name="description" content="Website trưng bày sản phẩm mobile-first có quyền admin cơ bản." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="site-shell">
+  <div class="bg-orb bg-orb-1"></div>
+  <div class="bg-orb bg-orb-2"></div>
+
+  <!-- LOGIN -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-tag">Bang Store</div>
+      <h1>Nhập Gmail để vào website</h1>
+      <p class="login-desc">
+        Chỉ chấp nhận địa chỉ đúng định dạng <strong>...@gmail.com</strong>. Nếu nhập đúng Gmail admin thì sẽ mở khu quản trị.
+      </p>
+
+      <form id="loginForm" class="login-form">
+        <label for="emailInput">Địa chỉ Gmail</label>
+        <input
+          id="emailInput"
+          type="email"
+          placeholder="Ví dụ: tenban@gmail.com"
+          autocomplete="email"
+        />
+        <div class="login-hint">Gmail admin: <strong>adminlaanh89@gmail.com</strong></div>
+        <p class="error-text" id="loginError"></p>
+        <button type="submit" class="btn btn-primary btn-full">Vào website</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div class="app hidden" id="app">
     <header class="topbar">
       <div class="container topbar-inner">
         <a href="#home" class="brand">
-          <div class="brand-badge">B</div>
+          <div class="brand-logo">B</div>
           <div class="brand-text">
             <strong>Bang Store</strong>
-            <span>Trưng bày sản phẩm</span>
+            <span>Website trưng bày sản phẩm</span>
           </div>
         </a>
 
-        <button
-          class="menu-toggle"
-          id="menuToggle"
-          aria-label="Mở menu"
-          aria-expanded="false"
-          aria-controls="mobileMenu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div class="topbar-right">
+          <div class="role-badge" id="roleBadge">Khách</div>
+          <button class="menu-btn" id="menuBtn" aria-label="Mở menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
 
       <div class="mobile-menu" id="mobileMenu">
         <div class="container mobile-menu-inner">
           <a href="#home" class="mobile-link">Trang chủ</a>
-          <a href="#categories" class="mobile-link">Danh mục</a>
-          <a href="#products" class="mobile-link">Sản phẩm</a>
-          <a href="#about" class="mobile-link">Giới thiệu</a>
-          <a href="#contact" class="mobile-link">Liên hệ</a>
-          <a
-            class="mobile-cta"
-            href="https://m.facebook.com/bang.nguyen.17040/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nhắn admin
-          </a>
+          <a href="#noticeSection" class="mobile-link">Thông báo</a>
+          <a href="#productsSection" class="mobile-link">Sản phẩm</a>
+          <a href="#contactSection" class="mobile-link">Liên hệ</a>
+          <button class="mobile-link logout-btn" id="logoutMobile" type="button">Đăng xuất</button>
         </div>
       </div>
     </header>
 
     <main id="home">
+      <!-- HERO -->
       <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
+        <div class="container">
+          <div class="hero-card">
             <div class="hero-pill">Mobile-first • Gọn • Sang • Dễ nhìn</div>
             <h1>
               Website trưng bày sản phẩm
-              <span>đẹp trên điện thoại</span>
+              <span>quản lý bằng quyền admin</span>
             </h1>
             <p>
-              Giao diện tối ưu cho màn hình di động, thao tác nhanh, màu sắc hiện
-              đại, trình bày sản phẩm rõ ràng. Khách chỉ cần bấm sản phẩm để liên
-              hệ admin kèm mã sản phẩm.
+              Giao diện tối ưu cho điện thoại, dễ đọc, dễ thao tác. Admin có thể thêm sản phẩm, ảnh, sản phẩm con, giá tiền, số lượng và thông báo cho website.
             </p>
 
             <div class="hero-actions">
-              <a href="#products" class="btn btn-primary">Xem sản phẩm</a>
-              <a
-                href="https://m.facebook.com/bang.nguyen.17040/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-secondary"
-              >
-                Liên hệ admin
-              </a>
+              <a href="#productsSection" class="btn btn-primary">Xem sản phẩm</a>
+              <a href="#contactSection" class="btn btn-secondary">Liên hệ nhanh</a>
             </div>
 
             <div class="hero-stats">
-              <div class="mini-stat">
+              <div class="stat-box">
                 <strong>100%</strong>
                 <span>Tối ưu mobile</span>
               </div>
-              <div class="mini-stat">
-                <strong>24/7</strong>
-                <span>Nhận tin nhắn</span>
+              <div class="stat-box">
+                <strong>Admin</strong>
+                <span>Quản trị sản phẩm</span>
               </div>
-              <div class="mini-stat">
-                <strong>Nhanh</strong>
-                <span>Tải nhẹ, mượt</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-card">
-            <div class="phone-mockup">
-              <div class="phone-top">
-                <span>Bang Store</span>
-                <span>09:41</span>
-              </div>
-
-              <div class="phone-search">
-                <input
-                  type="text"
-                  id="searchInput"
-                  placeholder="Tìm sản phẩm..."
-                />
-              </div>
-
-              <div class="phone-tags" id="categoryFilters">
-                <button class="tag active" data-filter="all">Tất cả</button>
-                <button class="tag" data-filter="hot">Bán chạy</button>
-                <button class="tag" data-filter="new">Mới</button>
-                <button class="tag" data-filter="decor">Decor</button>
-              </div>
-
-              <div class="phone-list" id="heroProductList">
-                <article class="mini-product">
-                  <div class="mini-thumb">01</div>
-                  <div class="mini-info">
-                    <h4>Set decor bàn làm việc</h4>
-                    <p>Mã: BANG-001</p>
-                  </div>
-                </article>
-                <article class="mini-product">
-                  <div class="mini-thumb">02</div>
-                  <div class="mini-info">
-                    <h4>Đèn ngủ mini</h4>
-                    <p>Mã: BANG-002</p>
-                  </div>
-                </article>
-                <article class="mini-product">
-                  <div class="mini-thumb">03</div>
-                  <div class="mini-info">
-                    <h4>Kệ trưng bày nhỏ</h4>
-                    <p>Mã: BANG-003</p>
-                  </div>
-                </article>
+              <div class="stat-box">
+                <strong>Mượt</strong>
+                <span>HTML + CSS + JS</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section categories" id="categories">
+      <!-- NOTICE -->
+      <section class="section" id="noticeSection">
         <div class="container">
           <div class="section-head">
             <div>
-              <span class="section-kicker">Danh mục nổi bật</span>
-              <h2>Chọn nhanh theo nhóm sản phẩm</h2>
+              <span class="section-kicker">Thông báo</span>
+              <h2>Thông báo từ admin</h2>
             </div>
-            <p>
-              Bố cục rõ ràng, bấm chọn nhanh trên điện thoại, dễ kéo xem từng nhóm.
-            </p>
+            <p>Admin có thể sửa nội dung này từ khu quản trị.</p>
           </div>
 
-          <div class="category-grid">
-            <button class="category-card" data-scroll="products" data-filter-target="all">
-              <span class="category-icon">✨</span>
-              <strong>Tất cả</strong>
-              <small>Xem toàn bộ sản phẩm</small>
-            </button>
-
-            <button class="category-card" data-scroll="products" data-filter-target="hot">
-              <span class="category-icon">🔥</span>
-              <strong>Bán chạy</strong>
-              <small>Sản phẩm được quan tâm</small>
-            </button>
-
-            <button class="category-card" data-scroll="products" data-filter-target="new">
-              <span class="category-icon">🆕</span>
-              <strong>Hàng mới</strong>
-              <small>Mẫu mới cập nhật</small>
-            </button>
-
-            <button class="category-card" data-scroll="products" data-filter-target="decor">
-              <span class="category-icon">🛋️</span>
-              <strong>Decor</strong>
-              <small>Trang trí không gian</small>
-            </button>
+          <div class="notice-box">
+            <div class="notice-dot"></div>
+            <div>
+              <strong id="noticeTitle">Chưa có thông báo</strong>
+              <p id="noticeContent">
+                Hiện tại chưa có thông báo nào. Admin có thể thêm thông báo mới từ bảng quản trị.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="section products-section" id="products">
+      <!-- ADMIN -->
+      <section class="section hidden" id="adminSection">
+        <div class="container">
+          <div class="admin-panel">
+            <div class="section-head">
+              <div>
+                <span class="section-kicker">Quyền admin</span>
+                <h2>Bảng quản trị sản phẩm</h2>
+              </div>
+              <p>Thêm sản phẩm chính, sản phẩm con, hình ảnh, giá, số lượng và thông báo website.</p>
+            </div>
+
+            <div class="admin-grid">
+              <div class="admin-box">
+                <h3>Thêm sản phẩm chính</h3>
+                <form id="parentForm" class="admin-form">
+                  <div class="field">
+                    <label for="parentName">Tên sản phẩm</label>
+                    <input id="parentName" type="text" placeholder="Ví dụ: Dịch vụ AI cơ bản" />
+                  </div>
+
+                  <div class="field">
+                    <label for="parentCode">Mã sản phẩm</label>
+                    <input id="parentCode" type="text" placeholder="Ví dụ: AI-001" />
+                  </div>
+
+                  <div class="field">
+                    <label for="parentPrice">Giá tiền</label>
+                    <input id="parentPrice" type="number" placeholder="Ví dụ: 99000" min="0" />
+                  </div>
+
+                  <div class="field">
+                    <label for="parentQty">Số lượng hiện có</label>
+                    <input id="parentQty" type="number" placeholder="Ví dụ: 15" min="0" />
+                  </div>
+
+                  <div class="field">
+                    <label for="parentImage">Hình sản phẩm</label>
+                    <input id="parentImage" type="file" accept="image/*" />
+                  </div>
+
+                  <div class="field">
+                    <label for="parentDesc">Mô tả</label>
+                    <textarea id="parentDesc" placeholder="Nhập mô tả sản phẩm"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-full">Thêm sản phẩm chính</button>
+                </form>
+              </div>
+
+              <div class="admin-box">
+                <h3>Thêm sản phẩm con</h3>
+                <form id="childForm" class="admin-form">
+                  <div class="field">
+                    <label for="childParent">Chọn sản phẩm chính</label>
+                    <select id="childParent"></select>
+                  </div>
+
+                  <div class="field">
+                    <label for="childName">Tên sản phẩm con</label>
+                    <input id="childName" type="text" placeholder="Ví dụ: Gói mở rộng" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childCode">Mã sản phẩm con</label>
+                    <input id="childCode" type="text" placeholder="Ví dụ: AI-001-A" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childPrice">Giá tiền</label>
+                    <input id="childPrice" type="number" placeholder="Ví dụ: 49000" min="0" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childQty">Số lượng hiện có</label>
+                    <input id="childQty" type="number" placeholder="Ví dụ: 20" min="0" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childImage">Hình sản phẩm con</label>
+                    <input id="childImage" type="file" accept="image/*" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childDesc">Mô tả sản phẩm con</label>
+                    <textarea id="childDesc" placeholder="Nhập mô tả sản phẩm con"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-full">Thêm sản phẩm con</button>
+                </form>
+              </div>
+
+              <div class="admin-box">
+                <h3>Thông báo website</h3>
+                <form id="noticeForm" class="admin-form">
+                  <div class="field">
+                    <label for="noticeTitleInput">Tiêu đề thông báo</label>
+                    <input id="noticeTitleInput" type="text" placeholder="Ví dụ: Shop đang cập nhật giá mới" />
+                  </div>
+
+                  <div class="field">
+                    <label for="noticeContentInput">Nội dung thông báo</label>
+                    <textarea id="noticeContentInput" placeholder="Nhập nội dung thông báo"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-full">Lưu thông báo</button>
+                </form>
+              </div>
+
+              <div class="admin-box">
+                <h3>Quản lý dữ liệu</h3>
+                <div class="admin-actions">
+                  <button id="clearProductsBtn" type="button" class="btn btn-secondary btn-full">
+                    Xoá toàn bộ sản phẩm
+                  </button>
+                  <button id="logoutDesktop" type="button" class="btn btn-secondary btn-full">
+                    Đăng xuất
+                  </button>
+                </div>
+                <p class="admin-note">
+                  Dữ liệu hiện lưu trên trình duyệt bằng localStorage. Nếu xoá dữ liệu trình duyệt thì dữ liệu sản phẩm cũng mất.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section class="section" id="productsSection">
         <div class="container">
           <div class="section-head">
             <div>
               <span class="section-kicker">Danh sách sản phẩm</span>
-              <h2>Sản phẩm nổi bật của shop</h2>
+              <h2>Sản phẩm do admin thêm</h2>
             </div>
-            <p>
-              Khi khách bấm vào sản phẩm, hệ thống hiện mã sản phẩm và dẫn tới
-              Facebook admin để khách nhắn tin nhanh.
-            </p>
+            <p>Hiện không có sản phẩm mặc định. Admin tự thêm sản phẩm từ khu quản trị.</p>
           </div>
 
-          <div class="toolbar">
-            <div class="search-box">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M10.5 18a7.5 7.5 0 1 1 5.303-2.197L21 21l-1.5 1.5-5.197-5.197A7.47 7.47 0 0 1 10.5 18Zm0-2.1a5.4 5.4 0 1 0 0-10.8 5.4 5.4 0 0 0 0 10.8Z"
-                />
-              </svg>
-              <input
-                type="text"
-                id="mainSearchInput"
-                placeholder="Tìm theo tên hoặc mã sản phẩm..."
-              />
-            </div>
-
-            <div class="filter-row" id="mainFilterRow">
-              <button class="chip active" data-filter="all">Tất cả</button>
-              <button class="chip" data-filter="hot">Bán chạy</button>
-              <button class="chip" data-filter="new">Mới</button>
-              <button class="chip" data-filter="decor">Decor</button>
-            </div>
+          <div class="search-wrap">
+            <input id="searchInput" type="text" placeholder="Tìm theo tên hoặc mã sản phẩm..." />
           </div>
 
-          <div class="product-grid" id="productGrid">
-            <article
-              class="product-card"
-              data-category="hot decor"
-              data-name="Set decor bàn làm việc"
-              data-code="BANG-001"
-            >
-              <div class="product-image gradient-1">
-                <span class="badge badge-hot">Bán chạy</span>
-                <div class="product-image-text">BANG-001</div>
-              </div>
-              <div class="product-body">
-                <div class="product-topline">
-                  <span class="product-category">Decor</span>
-                  <span class="product-code">#BANG-001</span>
-                </div>
-                <h3>Set decor bàn làm việc</h3>
-                <p>
-                  Phù hợp setup góc học tập, bàn làm việc, chụp ảnh sản phẩm nhỏ.
-                </p>
-                <div class="product-footer">
-                  <button
-                    class="btn-card"
-                    data-product="Set decor bàn làm việc"
-                    data-code="BANG-001"
-                  >
-                    Xem chi tiết
-                  </button>
-                </div>
-              </div>
-            </article>
+          <div class="products-grid" id="productsGrid"></div>
 
-            <article
-              class="product-card"
-              data-category="new decor"
-              data-name="Đèn ngủ mini"
-              data-code="BANG-002"
-            >
-              <div class="product-image gradient-2">
-                <span class="badge badge-new">Mới</span>
-                <div class="product-image-text">BANG-002</div>
-              </div>
-              <div class="product-body">
-                <div class="product-topline">
-                  <span class="product-category">Decor</span>
-                  <span class="product-code">#BANG-002</span>
-                </div>
-                <h3>Đèn ngủ mini</h3>
-                <p>
-                  Thiết kế nhỏ gọn, hợp không gian phòng ngủ, góc bàn hoặc kệ tủ.
-                </p>
-                <div class="product-footer">
-                  <button
-                    class="btn-card"
-                    data-product="Đèn ngủ mini"
-                    data-code="BANG-002"
-                  >
-                    Xem chi tiết
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article
-              class="product-card"
-              data-category="decor"
-              data-name="Kệ trưng bày nhỏ"
-              data-code="BANG-003"
-            >
-              <div class="product-image gradient-3">
-                <div class="product-image-text">BANG-003</div>
-              </div>
-              <div class="product-body">
-                <div class="product-topline">
-                  <span class="product-category">Decor</span>
-                  <span class="product-code">#BANG-003</span>
-                </div>
-                <h3>Kệ trưng bày nhỏ</h3>
-                <p>
-                  Dễ phối với bàn học, bàn make up, góc làm việc và không gian nhỏ.
-                </p>
-                <div class="product-footer">
-                  <button
-                    class="btn-card"
-                    data-product="Kệ trưng bày nhỏ"
-                    data-code="BANG-003"
-                  >
-                    Xem chi tiết
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article
-              class="product-card"
-              data-category="hot"
-              data-name="Hộp quà mini"
-              data-code="BANG-004"
-            >
-              <div class="product-image gradient-4">
-                <span class="badge badge-hot">Hot</span>
-                <div class="product-image-text">BANG-004</div>
-              </div>
-              <div class="product-body">
-                <div class="product-topline">
-                  <span class="product-category">Quà tặng</span>
-                  <span class="product-code">#BANG-004</span>
-                </div>
-                <h3>Hộp quà mini</h3>
-                <p>
-                  Kiểu dáng gọn, đẹp, thích hợp tặng quà nhỏ hoặc decor bàn học.
-                </p>
-                <div class="product-footer">
-                  <button
-                    class="btn-card"
-                    data-product="Hộp quà mini"
-                    data-code="BANG-004"
-                  >
-                    Xem chi tiết
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article
-              class="product-card"
-              data-category="new"
-              data-name="Móc khóa custom"
-              data-code="BANG-005"
-            >
-              <div class="product-image gradient-5">
-                <span class="badge badge-new">New</span>
-                <div class="product-image-text">BANG-005</div>
-              </div>
-              <div class="product-body">
-                <div class="product-topline">
-                  <span class="product-category">Phụ kiện</span>
-                  <span class="product-code">#BANG-005</span>
-                </div>
-                <h3>Móc khóa custom</h3>
-                <p>
-                  Mẫu trẻ trung, nhỏ gọn, phù hợp làm quà hoặc treo balo, chìa khóa.
-                </p>
-                <div class="product-footer">
-                  <button
-                    class="btn-card"
-                    data-product="Móc khóa custom"
-                    data-code="BANG-005"
-                  >
-                    Xem chi tiết
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article
-              class="product-card"
-              data-category="decor hot"
-              data-name="Khung ảnh mini"
-              data-code="BANG-006"
-            >
-              <div class="product-image gradient-6">
-                <span class="badge badge-hot">Ưa thích</span>
-                <div class="product-image-text">BANG-006</div>
-              </div>
-              <div class="product-body">
-                <div class="product-topline">
-                  <span class="product-category">Decor</span>
-                  <span class="product-code">#BANG-006</span>
-                </div>
-                <h3>Khung ảnh mini</h3>
-                <p>
-                  Phù hợp trưng bày bàn làm việc, góc decor cá nhân, chụp hình đẹp.
-                </p>
-                <div class="product-footer">
-                  <button
-                    class="btn-card"
-                    data-product="Khung ảnh mini"
-                    data-code="BANG-006"
-                  >
-                    Xem chi tiết
-                  </button>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="empty-state" id="emptyState" hidden>
-            <div class="empty-icon">🔎</div>
-            <h3>Không tìm thấy sản phẩm phù hợp</h3>
-            <p>Hãy thử từ khóa khác hoặc bấm lại mục “Tất cả”.</p>
+          <div class="empty-box" id="emptyBox">
+            <div class="empty-icon">📦</div>
+            <h3>Chưa có sản phẩm nào</h3>
+            <p>Admin hãy thêm sản phẩm để hiển thị tại đây.</p>
           </div>
         </div>
       </section>
 
-      <section class="section about-section" id="about">
-        <div class="container">
-          <div class="about-card">
-            <div class="about-content">
-              <span class="section-kicker">Giới thiệu</span>
-              <h2>Giao diện thiết kế ưu tiên người dùng điện thoại</h2>
-              <p>
-                Mọi thành phần đều được dàn theo chiều dọc, nút bấm lớn, khoảng cách
-                thoáng, chữ dễ đọc, thao tác bằng một tay thuận tiện hơn. Phù hợp
-                website trưng bày sản phẩm đơn giản, hiện đại và gọn mắt.
-              </p>
-
-              <div class="feature-list">
-                <div class="feature-item">
-                  <span>✓</span>
-                  <p>Header gọn, menu mobile trượt mượt</p>
-                </div>
-                <div class="feature-item">
-                  <span>✓</span>
-                  <p>Card sản phẩm hiện đại, bo góc đẹp</p>
-                </div>
-                <div class="feature-item">
-                  <span>✓</span>
-                  <p>Bộ lọc và tìm kiếm dễ dùng trên điện thoại</p>
-                </div>
-                <div class="feature-item">
-                  <span>✓</span>
-                  <p>Bấm sản phẩm để liên hệ admin ngay</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="about-side">
-              <div class="about-box">
-                <strong>Gợi ý sử dụng</strong>
-                <p>
-                  Sau này bạn chỉ cần thay tên sản phẩm, mã sản phẩm, mô tả và link
-                  admin là xong. Không cần backend vẫn dùng tốt để trưng bày.
-                </p>
-              </div>
-              <div class="about-box highlight-box">
-                <strong>Link liên hệ hiện tại</strong>
-                <p class="small-text">
-                  https://m.facebook.com/bang.nguyen.17040/
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section contact-section" id="contact">
+      <!-- CONTACT -->
+      <section class="section" id="contactSection">
         <div class="container">
           <div class="contact-card">
             <span class="section-kicker">Liên hệ nhanh</span>
-            <h2>Khách chỉ cần nhắn admin kèm mã sản phẩm</h2>
-            <p>
-              Ví dụ: “Em muốn hỏi sản phẩm mã BANG-001”. Cách này gọn, dễ quản lý,
-              không cần giỏ hàng hay thanh toán phức tạp.
-            </p>
+            <h2>Kênh liên hệ của admin</h2>
+            <p>Bấm vào các nút bên dưới để mở kênh liên hệ.</p>
 
             <div class="contact-actions">
               <a
@@ -496,7 +301,24 @@
               >
                 Mở Facebook admin
               </a>
-              <a href="#products" class="btn btn-secondary">Xem lại sản phẩm</a>
+
+              <a
+                href="https://t.me/NgoNam89"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+              >
+                Telegram: t.me/NgoNam89
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@nguyenbangg99?_r=1&_t=ZS-94UeKUMze7A"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary"
+              >
+                Tiktok: @nguyenbangg99
+              </a>
             </div>
           </div>
         </div>
@@ -505,226 +327,515 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <div>
-          <strong>Bang Store</strong>
-          <p>Website trưng bày sản phẩm tối ưu cho điện thoại.</p>
-        </div>
-        <a
-          href="https://m.facebook.com/bang.nguyen.17040/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="footer-link"
-        >
-          Liên hệ admin
-        </a>
+        <strong>Bang Store</strong>
+        <p>Website trưng bày sản phẩm tối ưu cho điện thoại.</p>
       </div>
+      <div class="copyright">© Copy right Nguyễn Bằng 2026</div>
     </footer>
   </div>
 
-  <div class="modal-backdrop" id="productModal" aria-hidden="true">
+  <!-- MODAL -->
+  <div class="modal" id="productModal">
     <div class="modal-card">
       <button class="modal-close" id="modalClose" aria-label="Đóng">×</button>
-      <div class="modal-label">Thông tin sản phẩm</div>
-      <h3 id="modalProductName">Tên sản phẩm</h3>
-      <p class="modal-desc">
-        Nhấn nút bên dưới để liên hệ admin qua Facebook và gửi đúng mã sản phẩm.
-      </p>
 
-      <div class="modal-code-box">
+      <div class="modal-label">Thông tin sản phẩm</div>
+      <h3 id="modalName">Tên sản phẩm</h3>
+      <p class="modal-desc" id="modalDesc">Mô tả sản phẩm</p>
+
+      <div class="modal-code">
         <span>Mã sản phẩm</span>
-        <strong id="modalProductCode">BANG-000</strong>
+        <strong id="modalCode">CODE-000</strong>
+      </div>
+
+      <div class="modal-info-grid">
+        <div class="info-card">
+          <span>Giá tiền</span>
+          <strong id="modalPrice">0đ</strong>
+        </div>
+        <div class="info-card">
+          <span>Số lượng</span>
+          <strong id="modalQty">0</strong>
+        </div>
+      </div>
+
+      <div class="children-wrap">
+        <div class="children-head">
+          <strong>Sản phẩm trong sản phẩm</strong>
+          <span id="childCount">0 mục</span>
+        </div>
+        <div id="childrenList" class="children-list"></div>
       </div>
 
       <div class="modal-actions">
-        <button class="btn btn-secondary" id="copyCodeBtn">Sao chép mã</button>
         <a
+          id="modalFacebookBtn"
           href="https://m.facebook.com/bang.nguyen.17040/"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-primary"
-          id="contactAdminBtn"
         >
-          Nhắn admin
+          Nhắn Facebook
+        </a>
+
+        <a
+          href="https://t.me/NgoNam89"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-secondary"
+        >
+          Telegram
         </a>
       </div>
     </div>
   </div>
 
   <script>
-    const menuToggle = document.getElementById("menuToggle");
+    const ADMIN_EMAIL = "adminlaanh89@gmail.com";
+    const KEYS = {
+      session: "bang_store_session",
+      products: "bang_store_products_safe_v1",
+      notice: "bang_store_notice_safe_v1"
+    };
+
+    const defaultNotice = {
+      title: "Chưa có thông báo",
+      content: "Hiện tại chưa có thông báo nào. Admin có thể thêm thông báo mới từ bảng quản trị."
+    };
+
+    let isAdmin = false;
+
+    const loginScreen = document.getElementById("loginScreen");
+    const app = document.getElementById("app");
+    const loginForm = document.getElementById("loginForm");
+    const emailInput = document.getElementById("emailInput");
+    const loginError = document.getElementById("loginError");
+
+    const roleBadge = document.getElementById("roleBadge");
+    const adminSection = document.getElementById("adminSection");
+
+    const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
-    const mobileLinks = document.querySelectorAll(".mobile-link, .mobile-cta");
+    const logoutMobile = document.getElementById("logoutMobile");
+    const logoutDesktop = document.getElementById("logoutDesktop");
 
-    menuToggle.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.toggle("open");
-      menuToggle.classList.toggle("active");
-      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
+    const noticeTitle = document.getElementById("noticeTitle");
+    const noticeContent = document.getElementById("noticeContent");
 
-    mobileLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    const productGrid = document.getElementById("productGrid");
-    const productCards = [...document.querySelectorAll(".product-card")];
-    const filterButtons = [...document.querySelectorAll("[data-filter]")];
-    const mainSearchInput = document.getElementById("mainSearchInput");
+    const productsGrid = document.getElementById("productsGrid");
+    const emptyBox = document.getElementById("emptyBox");
     const searchInput = document.getElementById("searchInput");
-    const emptyState = document.getElementById("emptyState");
 
-    let currentFilter = "all";
-    let currentKeyword = "";
+    const parentForm = document.getElementById("parentForm");
+    const childForm = document.getElementById("childForm");
+    const noticeForm = document.getElementById("noticeForm");
+    const clearProductsBtn = document.getElementById("clearProductsBtn");
+    const childParent = document.getElementById("childParent");
 
-    function normalizeText(text) {
-      return text
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
-    }
-
-    function applyFilterAndSearch() {
-      let visibleCount = 0;
-      const keyword = normalizeText(currentKeyword);
-
-      productCards.forEach((card) => {
-        const categories = card.dataset.category || "";
-        const name = card.dataset.name || "";
-        const code = card.dataset.code || "";
-
-        const matchFilter =
-          currentFilter === "all" || categories.includes(currentFilter);
-
-        const matchKeyword =
-          !keyword ||
-          normalizeText(name).includes(keyword) ||
-          normalizeText(code).includes(keyword);
-
-        if (matchFilter && matchKeyword) {
-          card.style.display = "";
-          visibleCount++;
-        } else {
-          card.style.display = "none";
-        }
-      });
-
-      emptyState.hidden = visibleCount !== 0;
-    }
-
-    function updateActiveButtons(filter) {
-      filterButtons.forEach((btn) => {
-        btn.classList.toggle("active", btn.dataset.filter === filter);
-      });
-    }
-
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        currentFilter = button.dataset.filter;
-        updateActiveButtons(currentFilter);
-        applyFilterAndSearch();
-      });
-    });
-
-    function syncSearch(value) {
-      currentKeyword = value.trim();
-      mainSearchInput.value = value;
-      searchInput.value = value;
-      applyFilterAndSearch();
-    }
-
-    mainSearchInput.addEventListener("input", (e) => {
-      syncSearch(e.target.value);
-    });
-
-    searchInput.addEventListener("input", (e) => {
-      syncSearch(e.target.value);
-    });
-
-    const categoryCards = document.querySelectorAll(".category-card");
-    categoryCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const targetId = card.dataset.scroll;
-        const targetFilter = card.dataset.filterTarget;
-
-        if (targetFilter) {
-          currentFilter = targetFilter;
-          updateActiveButtons(currentFilter);
-          applyFilterAndSearch();
-        }
-
-        const target = document.getElementById(targetId);
-        if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
-    });
-
-    const modal = document.getElementById("productModal");
+    const productModal = document.getElementById("productModal");
     const modalClose = document.getElementById("modalClose");
-    const modalProductName = document.getElementById("modalProductName");
-    const modalProductCode = document.getElementById("modalProductCode");
-    const copyCodeBtn = document.getElementById("copyCodeBtn");
-    const contactAdminBtn = document.getElementById("contactAdminBtn");
+    const modalName = document.getElementById("modalName");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalCode = document.getElementById("modalCode");
+    const modalPrice = document.getElementById("modalPrice");
+    const modalQty = document.getElementById("modalQty");
+    const childCount = document.getElementById("childCount");
+    const childrenList = document.getElementById("childrenList");
+    const modalFacebookBtn = document.getElementById("modalFacebookBtn");
 
-    let selectedCode = "";
-    let selectedName = "";
+    function isValidGmail(email) {
+      return /^[a-zA-Z0-9._%+-]+@gmail\.com$/i.test(email.trim());
+    }
 
-    function openModal(name, code) {
-      selectedName = name;
-      selectedCode = code;
-      modalProductName.textContent = name;
-      modalProductCode.textContent = code;
+    function formatCurrency(value) {
+      return Number(value || 0).toLocaleString("vi-VN") + "₫";
+    }
 
-      const message = encodeURIComponent(
-        `Chào admin, mình muốn hỏi sản phẩm ${name} - mã ${code}`
-      );
-      contactAdminBtn.href = `https://m.facebook.com/bang.nguyen.17040/?ref=bookmarks&message=${message}`;
+    function createId(prefix) {
+      return prefix + "-" + Date.now() + "-" + Math.floor(Math.random() * 10000);
+    }
 
-      modal.classList.add("show");
-      modal.setAttribute("aria-hidden", "false");
+    function getProducts() {
+      try {
+        return JSON.parse(localStorage.getItem(KEYS.products)) || [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveProducts(products) {
+      localStorage.setItem(KEYS.products, JSON.stringify(products));
+    }
+
+    function getNotice() {
+      try {
+        return JSON.parse(localStorage.getItem(KEYS.notice)) || defaultNotice;
+      } catch {
+        return defaultNotice;
+      }
+    }
+
+    function saveNotice(data) {
+      localStorage.setItem(KEYS.notice, JSON.stringify(data));
+    }
+
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        if (!file) {
+          resolve("");
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function renderNotice() {
+      const notice = getNotice();
+      noticeTitle.textContent = notice.title || defaultNotice.title;
+      noticeContent.textContent = notice.content || defaultNotice.content;
+    }
+
+    function renderParentSelect() {
+      const products = getProducts();
+      childParent.innerHTML = "";
+
+      if (!products.length) {
+        const option = document.createElement("option");
+        option.value = "";
+        option.textContent = "Chưa có sản phẩm chính";
+        childParent.appendChild(option);
+        return;
+      }
+
+      products.forEach((product) => {
+        const option = document.createElement("option");
+        option.value = product.id;
+        option.textContent = product.name + " (" + product.code + ")";
+        childParent.appendChild(option);
+      });
+    }
+
+    function createProductCard(product) {
+      const card = document.createElement("article");
+      card.className = "product-card";
+
+      const imageHtml = product.image
+        ? `<img src="${product.image}" alt="${product.name}" class="product-image-real">`
+        : `<div class="product-image-fallback">${product.code}</div>`;
+
+      card.innerHTML = `
+        <div class="product-image">
+          ${imageHtml}
+        </div>
+        <div class="product-body">
+          <div class="product-top">
+            <span class="product-type">Sản phẩm chính</span>
+            <span class="product-code-text">#${product.code}</span>
+          </div>
+          <h3>${product.name}</h3>
+          <p>${product.description || "Chưa có mô tả."}</p>
+
+          <div class="product-meta">
+            <div class="mini-info-box">
+              <span>Giá</span>
+              <strong>${formatCurrency(product.price)}</strong>
+            </div>
+            <div class="mini-info-box">
+              <span>Số lượng</span>
+              <strong>${product.quantity}</strong>
+            </div>
+          </div>
+
+          <button class="btn-card" type="button">Xem chi tiết</button>
+        </div>
+      `;
+
+      card.querySelector(".btn-card").addEventListener("click", () => openModal(product.id));
+      return card;
+    }
+
+    function renderProducts() {
+      const keyword = searchInput.value.trim().toLowerCase();
+      const products = getProducts().filter((item) => {
+        if (!keyword) return true;
+        return (
+          item.name.toLowerCase().includes(keyword) ||
+          item.code.toLowerCase().includes(keyword)
+        );
+      });
+
+      productsGrid.innerHTML = "";
+
+      if (!products.length) {
+        emptyBox.style.display = "block";
+        return;
+      }
+
+      emptyBox.style.display = "none";
+      products.forEach((product) => {
+        productsGrid.appendChild(createProductCard(product));
+      });
+    }
+
+    function renderAll() {
+      renderNotice();
+      renderParentSelect();
+      renderProducts();
+    }
+
+    function updateRoleUi() {
+      if (isAdmin) {
+        roleBadge.textContent = "Admin";
+        roleBadge.classList.add("role-admin");
+        adminSection.classList.remove("hidden");
+      } else {
+        roleBadge.textContent = "Khách";
+        roleBadge.classList.remove("role-admin");
+        adminSection.classList.add("hidden");
+      }
+    }
+
+    function openApp(email) {
+      localStorage.setItem(KEYS.session, email);
+      isAdmin = email.toLowerCase() === ADMIN_EMAIL;
+
+      loginScreen.classList.add("hidden");
+      app.classList.remove("hidden");
+
+      updateRoleUi();
+      renderAll();
+    }
+
+    function logout() {
+      localStorage.removeItem(KEYS.session);
+      isAdmin = false;
+      app.classList.add("hidden");
+      loginScreen.classList.remove("hidden");
+      emailInput.value = "";
+      loginError.textContent = "";
+      mobileMenu.classList.remove("open");
+      menuBtn.classList.remove("active");
+    }
+
+    function openModal(productId) {
+      const product = getProducts().find((item) => item.id === productId);
+      if (!product) return;
+
+      modalName.textContent = product.name;
+      modalDesc.textContent = product.description || "Chưa có mô tả.";
+      modalCode.textContent = product.code;
+      modalPrice.textContent = formatCurrency(product.price);
+      modalQty.textContent = product.quantity;
+
+      const text = encodeURIComponent(`Chào admin, mình muốn hỏi sản phẩm ${product.name} - mã ${product.code}`);
+      modalFacebookBtn.href = `https://m.facebook.com/bang.nguyen.17040/?ref=bookmarks&message=${text}`;
+
+      const children = Array.isArray(product.children) ? product.children : [];
+      childCount.textContent = children.length + " mục";
+      childrenList.innerHTML = "";
+
+      if (!children.length) {
+        const empty = document.createElement("div");
+        empty.className = "child-empty";
+        empty.textContent = "Chưa có sản phẩm con trong mục này.";
+        childrenList.appendChild(empty);
+      } else {
+        children.forEach((child) => {
+          const div = document.createElement("div");
+          div.className = "child-card";
+
+          const img = child.image
+            ? `<img src="${child.image}" alt="${child.name}" class="child-image-real">`
+            : `<div class="child-image-fallback">${child.code}</div>`;
+
+          div.innerHTML = `
+            <div class="child-image">${img}</div>
+            <div class="child-content">
+              <div class="child-title-row">
+                <strong>${child.name}</strong>
+                <span>#${child.code}</span>
+              </div>
+              <p>${child.description || "Chưa có mô tả."}</p>
+              <div class="child-meta">
+                <span>Giá: <b>${formatCurrency(child.price)}</b></span>
+                <span>Còn: <b>${child.quantity}</b></span>
+              </div>
+            </div>
+          `;
+          childrenList.appendChild(div);
+        });
+      }
+
+      productModal.classList.add("show");
       document.body.classList.add("modal-open");
     }
 
     function closeModal() {
-      modal.classList.remove("show");
-      modal.setAttribute("aria-hidden", "true");
+      productModal.classList.remove("show");
       document.body.classList.remove("modal-open");
     }
 
-    document.querySelectorAll(".btn-card").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        openModal(btn.dataset.product, btn.dataset.code);
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = emailInput.value.trim().toLowerCase();
+
+      if (!email) {
+        loginError.textContent = "Vui lòng nhập địa chỉ Gmail.";
+        return;
+      }
+
+      if (!isValidGmail(email)) {
+        loginError.textContent = "Bạn phải nhập đúng định dạng ...@gmail.com";
+        return;
+      }
+
+      loginError.textContent = "";
+      openApp(email);
+    });
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("open");
+      menuBtn.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".mobile-link").forEach((item) => {
+      item.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuBtn.classList.remove("active");
       });
     });
 
+    logoutMobile.addEventListener("click", logout);
+    logoutDesktop.addEventListener("click", logout);
+
+    searchInput.addEventListener("input", renderProducts);
+
+    parentForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!isAdmin) return;
+
+      const name = document.getElementById("parentName").value.trim();
+      const code = document.getElementById("parentCode").value.trim();
+      const price = document.getElementById("parentPrice").value.trim();
+      const quantity = document.getElementById("parentQty").value.trim();
+      const description = document.getElementById("parentDesc").value.trim();
+      const imageFile = document.getElementById("parentImage").files[0];
+
+      if (!name || !code || price === "" || quantity === "") {
+        alert("Vui lòng nhập đủ tên, mã, giá và số lượng.");
+        return;
+      }
+
+      const image = await fileToBase64(imageFile);
+      const products = getProducts();
+
+      products.unshift({
+        id: createId("P"),
+        name,
+        code,
+        price: Number(price),
+        quantity: Number(quantity),
+        description,
+        image,
+        children: []
+      });
+
+      saveProducts(products);
+      parentForm.reset();
+      renderAll();
+      alert("Đã thêm sản phẩm chính.");
+    });
+
+    childForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (!isAdmin) return;
+
+      const parentId = childParent.value;
+      const name = document.getElementById("childName").value.trim();
+      const code = document.getElementById("childCode").value.trim();
+      const price = document.getElementById("childPrice").value.trim();
+      const quantity = document.getElementById("childQty").value.trim();
+      const description = document.getElementById("childDesc").value.trim();
+      const imageFile = document.getElementById("childImage").files[0];
+
+      if (!parentId || !name || !code || price === "" || quantity === "") {
+        alert("Vui lòng chọn sản phẩm chính và nhập đủ thông tin sản phẩm con.");
+        return;
+      }
+
+      const products = getProducts();
+      const parent = products.find((item) => item.id === parentId);
+      if (!parent) {
+        alert("Không tìm thấy sản phẩm chính.");
+        return;
+      }
+
+      const image = await fileToBase64(imageFile);
+
+      parent.children.unshift({
+        id: createId("C"),
+        name,
+        code,
+        price: Number(price),
+        quantity: Number(quantity),
+        description,
+        image
+      });
+
+      saveProducts(products);
+      childForm.reset();
+      renderAll();
+      alert("Đã thêm sản phẩm con.");
+    });
+
+    noticeForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!isAdmin) return;
+
+      const title = document.getElementById("noticeTitleInput").value.trim();
+      const content = document.getElementById("noticeContentInput").value.trim();
+
+      saveNotice({
+        title: title || defaultNotice.title,
+        content: content || defaultNotice.content
+      });
+
+      renderNotice();
+      alert("Đã lưu thông báo.");
+    });
+
+    clearProductsBtn.addEventListener("click", () => {
+      if (!isAdmin) return;
+      const ok = confirm("Bạn có chắc muốn xoá toàn bộ sản phẩm?");
+      if (!ok) return;
+
+      saveProducts([]);
+      renderAll();
+      alert("Đã xoá toàn bộ sản phẩm.");
+    });
+
     modalClose.addEventListener("click", closeModal);
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) closeModal();
+    productModal.addEventListener("click", (e) => {
+      if (e.target === productModal) closeModal();
     });
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeModal();
     });
 
-    copyCodeBtn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(selectedCode);
-        copyCodeBtn.textContent = "Đã sao chép";
-        setTimeout(() => {
-          copyCodeBtn.textContent = "Sao chép mã";
-        }, 1400);
-      } catch (error) {
-        copyCodeBtn.textContent = selectedCode;
-        setTimeout(() => {
-          copyCodeBtn.textContent = "Sao chép mã";
-        }, 1400);
-      }
-    });
+    (function init() {
+      renderNotice();
+      renderParentSelect();
+      renderProducts();
 
-    applyFilterAndSearch();
+      const session = localStorage.getItem(KEYS.session);
+      if (session && isValidGmail(session)) {
+        openApp(session);
+      }
+    })();
   </script>
 </body>
 </html>
