@@ -20,7 +20,7 @@
       <div class="login-tag">Bang Store</div>
       <h1>Nhập Gmail để vào website</h1>
       <p class="login-desc">
-        Chỉ chấp nhận địa chỉ đúng định dạng <strong>...@gmail.com</strong>. Nếu nhập đúng Gmail admin thì sẽ mở khu quản trị.
+        Chỉ chấp nhận địa chỉ đúng định dạng <strong>...@gmail.com</strong>. Nếu nhập đúng tài khoản quản trị thì sẽ mở khu admin.
       </p>
 
       <form id="loginForm" class="login-form">
@@ -31,7 +31,6 @@
           placeholder="Ví dụ: tenban@gmail.com"
           autocomplete="email"
         />
-        <div class="login-hint">Gmail admin: <strong>adminlaanh89@gmail.com</strong></div>
         <p class="error-text" id="loginError"></p>
         <button type="submit" class="btn btn-primary btn-full">Vào website</button>
       </form>
@@ -82,7 +81,7 @@
               <span>quản lý bằng quyền admin</span>
             </h1>
             <p>
-              Giao diện tối ưu cho điện thoại, dễ đọc, dễ thao tác. Admin có thể thêm sản phẩm, ảnh, sản phẩm con, giá tiền, số lượng và thông báo cho website.
+              Giao diện tối ưu cho điện thoại, dễ đọc, dễ thao tác. Admin có thể thêm sản phẩm chính, sản phẩm con, hình ảnh và thông báo website.
             </p>
 
             <div class="hero-actions">
@@ -140,7 +139,7 @@
                 <span class="section-kicker">Quyền admin</span>
                 <h2>Bảng quản trị sản phẩm</h2>
               </div>
-              <p>Thêm sản phẩm chính, sản phẩm con, hình ảnh, giá, số lượng và thông báo website.</p>
+              <p>Thêm sản phẩm chính, sản phẩm con, hình ảnh và thông báo website.</p>
             </div>
 
             <div class="admin-grid">
@@ -149,22 +148,12 @@
                 <form id="parentForm" class="admin-form">
                   <div class="field">
                     <label for="parentName">Tên sản phẩm</label>
-                    <input id="parentName" type="text" placeholder="Ví dụ: Dịch vụ AI cơ bản" />
+                    <input id="parentName" type="text" placeholder="Ví dụ: Chat GPT" />
                   </div>
 
                   <div class="field">
-                    <label for="parentCode">Mã sản phẩm</label>
-                    <input id="parentCode" type="text" placeholder="Ví dụ: AI-001" />
-                  </div>
-
-                  <div class="field">
-                    <label for="parentPrice">Giá tiền</label>
-                    <input id="parentPrice" type="number" placeholder="Ví dụ: 99000" min="0" />
-                  </div>
-
-                  <div class="field">
-                    <label for="parentQty">Số lượng hiện có</label>
-                    <input id="parentQty" type="number" placeholder="Ví dụ: 15" min="0" />
+                    <label for="parentCode">Mã sản phẩm chính</label>
+                    <input id="parentCode" type="text" placeholder="Ví dụ: C-00" />
                   </div>
 
                   <div class="field">
@@ -173,8 +162,8 @@
                   </div>
 
                   <div class="field">
-                    <label for="parentDesc">Mô tả</label>
-                    <textarea id="parentDesc" placeholder="Nhập mô tả sản phẩm"></textarea>
+                    <label for="parentDesc">Nội dung</label>
+                    <textarea id="parentDesc" placeholder="Nhập nội dung sản phẩm chính"></textarea>
                   </div>
 
                   <button type="submit" class="btn btn-primary btn-full">Thêm sản phẩm chính</button>
@@ -196,7 +185,7 @@
 
                   <div class="field">
                     <label for="childCode">Mã sản phẩm con</label>
-                    <input id="childCode" type="text" placeholder="Ví dụ: AI-001-A" />
+                    <input id="childCode" type="text" placeholder="Ví dụ: C1-00" />
                   </div>
 
                   <div class="field">
@@ -215,8 +204,8 @@
                   </div>
 
                   <div class="field">
-                    <label for="childDesc">Mô tả sản phẩm con</label>
-                    <textarea id="childDesc" placeholder="Nhập mô tả sản phẩm con"></textarea>
+                    <label for="childDesc">Nội dung sản phẩm con</label>
+                    <textarea id="childDesc" placeholder="Nhập nội dung sản phẩm con"></textarea>
                   </div>
 
                   <button type="submit" class="btn btn-primary btn-full">Thêm sản phẩm con</button>
@@ -267,7 +256,7 @@
               <span class="section-kicker">Danh sách sản phẩm</span>
               <h2>Sản phẩm do admin thêm</h2>
             </div>
-            <p>Hiện không có sản phẩm mặc định. Admin tự thêm sản phẩm từ khu quản trị.</p>
+            <p>Giá và số lượng chỉ hiển thị ở sản phẩm con trong phần chi tiết.</p>
           </div>
 
           <div class="search-wrap">
@@ -341,22 +330,11 @@
 
       <div class="modal-label">Thông tin sản phẩm</div>
       <h3 id="modalName">Tên sản phẩm</h3>
-      <p class="modal-desc" id="modalDesc">Mô tả sản phẩm</p>
+      <p class="modal-desc" id="modalDesc">Nội dung sản phẩm</p>
 
       <div class="modal-code">
         <span>Mã sản phẩm</span>
         <strong id="modalCode">CODE-000</strong>
-      </div>
-
-      <div class="modal-info-grid">
-        <div class="info-card">
-          <span>Giá tiền</span>
-          <strong id="modalPrice">0đ</strong>
-        </div>
-        <div class="info-card">
-          <span>Số lượng</span>
-          <strong id="modalQty">0</strong>
-        </div>
       </div>
 
       <div class="children-wrap">
@@ -391,17 +369,19 @@
   </div>
 
   <script>
-    const ADMIN_EMAIL = "adminlaanh89@gmail.com";
     const KEYS = {
-      session: "bang_store_session",
-      products: "bang_store_products_safe_v1",
-      notice: "bang_store_notice_safe_v1"
+      session: "bang_store_session_v2",
+      products: "bang_store_products_v2",
+      notice: "bang_store_notice_v2"
     };
 
     const defaultNotice = {
       title: "Chưa có thông báo",
       content: "Hiện tại chưa có thông báo nào. Admin có thể thêm thông báo mới từ bảng quản trị."
     };
+
+    // MD5 của adminlaanh89@gmail.com
+    const ADMIN_EMAIL_MD5 = "0d2eeaf0cc68de8d897f4eff9ecafeb6";
 
     let isAdmin = false;
 
@@ -437,11 +417,146 @@
     const modalName = document.getElementById("modalName");
     const modalDesc = document.getElementById("modalDesc");
     const modalCode = document.getElementById("modalCode");
-    const modalPrice = document.getElementById("modalPrice");
-    const modalQty = document.getElementById("modalQty");
     const childCount = document.getElementById("childCount");
     const childrenList = document.getElementById("childrenList");
     const modalFacebookBtn = document.getElementById("modalFacebookBtn");
+
+    function md5cycle(x, k) {
+      let [a, b, c, d] = x;
+
+      a = ff(a, b, c, d, k[0], 7, -680876936);
+      d = ff(d, a, b, c, k[1], 12, -389564586);
+      c = ff(c, d, a, b, k[2], 17, 606105819);
+      b = ff(b, c, d, a, k[3], 22, -1044525330);
+      a = ff(a, b, c, d, k[4], 7, -176418897);
+      d = ff(d, a, b, c, k[5], 12, 1200080426);
+      c = ff(c, d, a, b, k[6], 17, -1473231341);
+      b = ff(b, c, d, a, k[7], 22, -45705983);
+      a = ff(a, b, c, d, k[8], 7, 1770035416);
+      d = ff(d, a, b, c, k[9], 12, -1958414417);
+      c = ff(c, d, a, b, k[10], 17, -42063);
+      b = ff(b, c, d, a, k[11], 22, -1990404162);
+      a = ff(a, b, c, d, k[12], 7, 1804603682);
+      d = ff(d, a, b, c, k[13], 12, -40341101);
+      c = ff(c, d, a, b, k[14], 17, -1502002290);
+      b = ff(b, c, d, a, k[15], 22, 1236535329);
+
+      a = gg(a, b, c, d, k[1], 5, -165796510);
+      d = gg(d, a, b, c, k[6], 9, -1069501632);
+      c = gg(c, d, a, b, k[11], 14, 643717713);
+      b = gg(b, c, d, a, k[0], 20, -373897302);
+      a = gg(a, b, c, d, k[5], 5, -701558691);
+      d = gg(d, a, b, c, k[10], 9, 38016083);
+      c = gg(c, d, a, b, k[15], 14, -660478335);
+      b = gg(b, c, d, a, k[4], 20, -405537848);
+      a = gg(a, b, c, d, k[9], 5, 568446438);
+      d = gg(d, a, b, c, k[14], 9, -1019803690);
+      c = gg(c, d, a, b, k[3], 14, -187363961);
+      b = gg(b, c, d, a, k[8], 20, 1163531501);
+      a = gg(a, b, c, d, k[13], 5, -1444681467);
+      d = gg(d, a, b, c, k[2], 9, -51403784);
+      c = gg(c, d, a, b, k[7], 14, 1735328473);
+      b = gg(b, c, d, a, k[12], 20, -1926607734);
+
+      a = hh(a, b, c, d, k[5], 4, -378558);
+      d = hh(d, a, b, c, k[8], 11, -2022574463);
+      c = hh(c, d, a, b, k[11], 16, 1839030562);
+      b = hh(b, c, d, a, k[14], 23, -35309556);
+      a = hh(a, b, c, d, k[1], 4, -1530992060);
+      d = hh(d, a, b, c, k[4], 11, 1272893353);
+      c = hh(c, d, a, b, k[7], 16, -155497632);
+      b = hh(b, c, d, a, k[10], 23, -1094730640);
+      a = hh(a, b, c, d, k[13], 4, 681279174);
+      d = hh(d, a, b, c, k[0], 11, -358537222);
+      c = hh(c, d, a, b, k[3], 16, -722521979);
+      b = hh(b, c, d, a, k[6], 23, 76029189);
+      a = hh(a, b, c, d, k[9], 4, -640364487);
+      d = hh(d, a, b, c, k[12], 11, -421815835);
+      c = hh(c, d, a, b, k[15], 16, 530742520);
+      b = hh(b, c, d, a, k[2], 23, -995338651);
+
+      a = ii(a, b, c, d, k[0], 6, -198630844);
+      d = ii(d, a, b, c, k[7], 10, 1126891415);
+      c = ii(c, d, a, b, k[14], 15, -1416354905);
+      b = ii(b, c, d, a, k[5], 21, -57434055);
+      a = ii(a, b, c, d, k[12], 6, 1700485571);
+      d = ii(d, a, b, c, k[3], 10, -1894986606);
+      c = ii(c, d, a, b, k[10], 15, -1051523);
+      b = ii(b, c, d, a, k[1], 21, -2054922799);
+      a = ii(a, b, c, d, k[8], 6, 1873313359);
+      d = ii(d, a, b, c, k[15], 10, -30611744);
+      c = ii(c, d, a, b, k[6], 15, -1560198380);
+      b = ii(b, c, d, a, k[13], 21, 1309151649);
+      a = ii(a, b, c, d, k[4], 6, -145523070);
+      d = ii(d, a, b, c, k[11], 10, -1120210379);
+      c = ii(c, d, a, b, k[2], 15, 718787259);
+      b = ii(b, c, d, a, k[9], 21, -343485551);
+
+      x[0] = add32(a, x[0]);
+      x[1] = add32(b, x[1]);
+      x[2] = add32(c, x[2]);
+      x[3] = add32(d, x[3]);
+    }
+
+    function cmn(q, a, b, x, s, t) {
+      a = add32(add32(a, q), add32(x, t));
+      return add32((a << s) | (a >>> (32 - s)), b);
+    }
+    function ff(a, b, c, d, x, s, t) { return cmn((b & c) | (~b & d), a, b, x, s, t); }
+    function gg(a, b, c, d, x, s, t) { return cmn((b & d) | (c & ~d), a, b, x, s, t); }
+    function hh(a, b, c, d, x, s, t) { return cmn(b ^ c ^ d, a, b, x, s, t); }
+    function ii(a, b, c, d, x, s, t) { return cmn(c ^ (b | ~d), a, b, x, s, t); }
+
+    function md51(s) {
+      const txt = "";
+      const n = s.length;
+      const state = [1732584193, -271733879, -1732584194, 271733878];
+      let i;
+      for (i = 64; i <= n; i += 64) {
+        md5cycle(state, md5blk(s.substring(i - 64, i)));
+      }
+      s = s.substring(i - 64);
+      const tail = Array(16).fill(0);
+      for (i = 0; i < s.length; i++) {
+        tail[i >> 2] |= s.charCodeAt(i) << ((i % 4) << 3);
+      }
+      tail[i >> 2] |= 0x80 << ((i % 4) << 3);
+      if (i > 55) {
+        md5cycle(state, tail);
+        for (i = 0; i < 16; i++) tail[i] = 0;
+      }
+      tail[14] = n * 8;
+      md5cycle(state, tail);
+      return state;
+    }
+
+    function md5blk(s) {
+      const md5blks = [];
+      for (let i = 0; i < 64; i += 4) {
+        md5blks[i >> 2] = s.charCodeAt(i)
+          + (s.charCodeAt(i + 1) << 8)
+          + (s.charCodeAt(i + 2) << 16)
+          + (s.charCodeAt(i + 3) << 24);
+      }
+      return md5blks;
+    }
+
+    const hex_chr = "0123456789abcdef".split("");
+    function rhex(n) {
+      let s = "";
+      for (let j = 0; j < 4; j++) {
+        s += hex_chr[(n >> (j * 8 + 4)) & 0x0f] + hex_chr[(n >> (j * 8)) & 0x0f];
+      }
+      return s;
+    }
+
+    function md5(s) {
+      return md51(s).map(rhex).join("");
+    }
+
+    function add32(a, b) {
+      return (a + b) & 0xffffffff;
+    }
 
     function isValidGmail(email) {
       return /^[a-zA-Z0-9._%+-]+@gmail\.com$/i.test(email.trim());
@@ -536,19 +651,7 @@
             <span class="product-code-text">#${product.code}</span>
           </div>
           <h3>${product.name}</h3>
-          <p>${product.description || "Chưa có mô tả."}</p>
-
-          <div class="product-meta">
-            <div class="mini-info-box">
-              <span>Giá</span>
-              <strong>${formatCurrency(product.price)}</strong>
-            </div>
-            <div class="mini-info-box">
-              <span>Số lượng</span>
-              <strong>${product.quantity}</strong>
-            </div>
-          </div>
-
+          <p>${product.description || "Chưa có nội dung."}</p>
           <button class="btn-card" type="button">Xem chi tiết</button>
         </div>
       `;
@@ -562,8 +665,8 @@
       const products = getProducts().filter((item) => {
         if (!keyword) return true;
         return (
-          item.name.toLowerCase().includes(keyword) ||
-          item.code.toLowerCase().includes(keyword)
+          (item.name || "").toLowerCase().includes(keyword) ||
+          (item.code || "").toLowerCase().includes(keyword)
         );
       });
 
@@ -600,7 +703,7 @@
 
     function openApp(email) {
       localStorage.setItem(KEYS.session, email);
-      isAdmin = email.toLowerCase() === ADMIN_EMAIL;
+      isAdmin = md5(email.toLowerCase()) === ADMIN_EMAIL_MD5;
 
       loginScreen.classList.add("hidden");
       app.classList.remove("hidden");
@@ -625,10 +728,8 @@
       if (!product) return;
 
       modalName.textContent = product.name;
-      modalDesc.textContent = product.description || "Chưa có mô tả.";
+      modalDesc.textContent = product.description || "Chưa có nội dung.";
       modalCode.textContent = product.code;
-      modalPrice.textContent = formatCurrency(product.price);
-      modalQty.textContent = product.quantity;
 
       const text = encodeURIComponent(`Chào admin, mình muốn hỏi sản phẩm ${product.name} - mã ${product.code}`);
       modalFacebookBtn.href = `https://m.facebook.com/bang.nguyen.17040/?ref=bookmarks&message=${text}`;
@@ -651,14 +752,22 @@
             ? `<img src="${child.image}" alt="${child.name}" class="child-image-real">`
             : `<div class="child-image-fallback">${child.code}</div>`;
 
+          const buyText = encodeURIComponent(
+            `Chào admin, mình muốn mua ${child.name} - mã ${child.code} thuộc ${product.name}`
+          );
+          const buyLink = `https://m.facebook.com/bang.nguyen.17040/?ref=bookmarks&message=${buyText}`;
+
           div.innerHTML = `
             <div class="child-image">${img}</div>
             <div class="child-content">
               <div class="child-title-row">
-                <strong>${child.name}</strong>
-                <span>#${child.code}</span>
+                <div class="child-title-main">
+                  <strong>${child.name}</strong>
+                  <span>#${child.code}</span>
+                </div>
+                <a href="${buyLink}" target="_blank" rel="noopener noreferrer" class="buy-now-inline">Mua ngay</a>
               </div>
-              <p>${child.description || "Chưa có mô tả."}</p>
+              <p>${child.description || "Chưa có nội dung."}</p>
               <div class="child-meta">
                 <span>Giá: <b>${formatCurrency(child.price)}</b></span>
                 <span>Còn: <b>${child.quantity}</b></span>
@@ -719,13 +828,11 @@
 
       const name = document.getElementById("parentName").value.trim();
       const code = document.getElementById("parentCode").value.trim();
-      const price = document.getElementById("parentPrice").value.trim();
-      const quantity = document.getElementById("parentQty").value.trim();
       const description = document.getElementById("parentDesc").value.trim();
       const imageFile = document.getElementById("parentImage").files[0];
 
-      if (!name || !code || price === "" || quantity === "") {
-        alert("Vui lòng nhập đủ tên, mã, giá và số lượng.");
+      if (!name || !code) {
+        alert("Vui lòng nhập đủ tên và mã sản phẩm chính.");
         return;
       }
 
@@ -736,8 +843,6 @@
         id: createId("P"),
         name,
         code,
-        price: Number(price),
-        quantity: Number(quantity),
         description,
         image,
         children: []
