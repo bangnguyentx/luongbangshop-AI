@@ -1067,4 +1067,56 @@ img {
   .contact-card {
     padding: 34px;
   }
+  
+  .buy-now-inline {
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: linear-gradient(135deg, #7c3aed, #d946ef);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 10px 20px rgba(124, 58, 237, 0.22);
+}
+
+.child-title-main {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.child-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.product-body p,
+.modal-desc,
+.child-content p {
+  word-break: break-word;
+}
+
+@media (max-width: 420px) {
+  .child-card {
+    grid-template-columns: 72px 1fr;
+  }
+
+  .child-image {
+    width: 72px;
+    height: 72px;
+  }
+
+  .buy-now-inline {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
 }
