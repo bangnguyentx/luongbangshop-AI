@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Bằng AI Tool Shop</title>
+  <meta
+    name="description"
+    content="Website trưng bày sản phẩm AI Tool mobile-first, có khu admin quản lý sản phẩm và nội dung."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- LOGIN -->
+  <section class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-badge">Bằng AI Tool Shop</div>
+      <h1>Nhập Gmail để vào website</h1>
+      <p class="login-desc">
+        Chỉ cần nhập đúng địa chỉ <strong>...@gmail.com</strong> là có thể vào web.
+        Nếu nhập đúng email admin thì sẽ mở thêm khu quản trị.
+      </p>
+
+      <form id="loginForm" class="login-form">
+        <label for="emailInput">Địa chỉ Gmail</label>
+        <input
+          id="emailInput"
+          type="email"
+          placeholder="Ví dụ: tenban@gmail.com"
+          autocomplete="email"
+        />
+        <p class="login-error" id="loginError"></p>
+        <button type="submit" class="btn btn-primary btn-full">Vào website</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- APP -->
+  <div class="app hidden" id="app">
+    <!-- TOP INFO BAR -->
+    <div class="ticker-bar">
+      <div class="container ticker-inner">
+        <a href="#policySection" class="ticker-icon-btn" aria-label="Chính sách">
+          📘
+        </a>
+
+        <a href="tel:0399834208" class="ticker-icon-btn" aria-label="Gọi điện">
+          📞
+        </a>
+
+        <div class="ticker-marquee">
+          <div class="ticker-track">
+            <span>⚡ Giao diện check</span>
+            <span>•</span>
+            <span>Hỗ trợ 1s</span>
+            <span>•</span>
+            <span>Giao dịch nhanh chóng</span>
+            <span>•</span>
+            <span>Cập nhật sản phẩm và giá tốt thường xuyên</span>
+            <span>•</span>
+            <span>⚡ Giao diện check</span>
+            <span>•</span>
+            <span>Hỗ trợ 1s</span>
+            <span>•</span>
+            <span>Giao dịch nhanh chóng</span>
+            <span>•</span>
+            <span>Cập nhật sản phẩm và giá tốt thường xuyên</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="main-header">
+      <div class="container main-header-inner">
+        <a href="#homeSection" class="site-brand">
+          <div class="site-brand-logo">B</div>
+          <div class="site-brand-text">
+            <strong>Bằng AI Tool Shop</strong>
+            <span>Web check sản phẩm</span>
+          </div>
+        </a>
+
+        <div class="header-tools">
+          <button class="header-icon-btn" id="openSearchBtn" aria-label="Mở tìm kiếm">
+            🔍
+          </button>
+          <button class="header-icon-btn" id="menuBtn" aria-label="Mở menu">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-search hidden" id="mobileSearch">
+        <div class="container mobile-search-inner">
+          <input
+            id="globalSearchInput"
+            type="text"
+            placeholder="Tìm sản phẩm, mã sản phẩm..."
+          />
+        </div>
+      </div>
+
+      <div class="mobile-drawer hidden" id="mobileDrawer">
+        <div class="container drawer-inner">
+          <a href="#productsSection" class="drawer-link">Sản phẩm</a>
+          <a href="#contactSection" class="drawer-link">Liên hệ quảng bá</a>
+          <a href="#policySection" class="drawer-link">Chính sách</a>
+          <button type="button" class="drawer-link drawer-button" id="logoutBtn">
+            Đăng xuất
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero-section" id="homeSection">
+        <div class="container">
+          <div class="hero-banner" id="heroBanner">
+            <div class="hero-overlay">
+              <span class="hero-kicker">Bằng AI Tool Shop</span>
+              <h1 id="heroTitle">Kho sản phẩm AI Tool mobile-first</h1>
+              <p id="heroText">
+                Giao diện gọn đẹp, dễ nhìn trên điện thoại, khách xem sản phẩm nhanh,
+                admin chủ động thêm sản phẩm và nội dung.
+              </p>
+              <div class="hero-actions">
+                <a href="#productsSection" class="btn btn-primary">Xem sản phẩm</a>
+                <a href="#contactSection" class="btn btn-secondary">Liên hệ</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="quick-grid">
+            <a href="#productsSection" class="quick-card active">🛒 Tất cả sản phẩm</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ADMIN PANEL -->
+      <section class="section hidden" id="adminSection">
+        <div class="container">
+          <div class="admin-shell">
+            <div class="section-head">
+              <div>
+                <span class="section-kicker">Quyền admin</span>
+                <h2>Bảng quản trị nội dung</h2>
+              </div>
+              <p>
+                Admin có thể thêm sản phẩm chính, sản phẩm con, ảnh, chính sách, banner,
+                thông tin liên hệ và nội dung website.
+              </p>
+            </div>
+
+            <div class="admin-grid">
+              <div class="admin-card">
+                <h3>Cấu hình website</h3>
+                <form id="siteForm" class="admin-form">
+                  <div class="field">
+                    <label for="siteTitleInput">Tiêu đề banner</label>
+                    <input id="siteTitleInput" type="text" placeholder="Ví dụ: Kho sản phẩm AI Tool" />
+                  </div>
+
+                  <div class="field">
+                    <label for="siteDescInput">Mô tả banner</label>
+                    <textarea id="siteDescInput" placeholder="Nhập mô tả banner"></textarea>
+                  </div>
+
+                  <div class="field">
+                    <label for="bannerImageInput">Ảnh banner</label>
+                    <input id="bannerImageInput" type="file" accept="image/*" />
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-full">Lưu giao diện website</button>
+                </form>
+              </div>
+
+              <div class="admin-card">
+                <h3>Thêm sản phẩm chính</h3>
+                <form id="parentForm" class="admin-form">
+                  <div class="field">
+                    <label for="parentName">Tên sản phẩm chính</label>
+                    <input id="parentName" type="text" placeholder="Ví dụ: Chat GPT" />
+                  </div>
+
+                  <div class="field">
+                    <label for="parentCode">Mã sản phẩm chính</label>
+                    <input id="parentCode" type="text" placeholder="Ví dụ: C-00" />
+                  </div>
+
+                  <div class="field">
+                    <label for="parentCategory">Danh mục hiển thị</label>
+                    <input id="parentCategory" type="text" placeholder="Ví dụ: Tài Khoản AI" />
+                  </div>
+
+                  <div class="field">
+                    <label for="parentImage">Ảnh sản phẩm chính</label>
+                    <input id="parentImage" type="file" accept="image/*" />
+                  </div>
+
+                  <div class="field">
+                    <label for="parentDesc">Nội dung</label>
+                    <textarea id="parentDesc" placeholder="Nhập nội dung sản phẩm chính"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-full">Thêm sản phẩm chính</button>
+                </form>
+              </div>
+
+              <div class="admin-card">
+                <h3>Thêm sản phẩm con</h3>
+                <form id="childForm" class="admin-form">
+                  <div class="field">
+                    <label for="childParent">Chọn sản phẩm chính</label>
+                    <select id="childParent"></select>
+                  </div>
+
+                  <div class="field">
+                    <label for="childName">Tên sản phẩm con</label>
+                    <input id="childName" type="text" placeholder="Ví dụ: Gói 1 tháng" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childCode">Mã sản phẩm con</label>
+                    <input id="childCode" type="text" placeholder="Ví dụ: C1-00" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childPrice">Giá tiền</label>
+                    <input id="childPrice" type="number" placeholder="Ví dụ: 49000" min="0" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childOldPrice">Giá cũ (nếu có)</label>
+                    <input id="childOldPrice" type="number" placeholder="Ví dụ: 99000" min="0" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childQty">Số lượng</label>
+                    <input id="childQty" type="number" placeholder="Ví dụ: 15" min="0" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childBadge">Nhãn giảm giá</label>
+                    <input id="childBadge" type="text" placeholder="Ví dụ: -85%" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childImage">Ảnh sản phẩm con</label>
+                    <input id="childImage" type="file" accept="image/*" />
+                  </div>
+
+                  <div class="field">
+                    <label for="childDesc">Nội dung sản phẩm con</label>
+                    <textarea id="childDesc" placeholder="Nhập mô tả sản phẩm con"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-full">Thêm sản phẩm con</button>
+                </form>
+              </div>
+
+              <div class="admin-card">
+                <h3>Thông báo đầu trang</h3>
+                <form id="noticeForm" class="admin-form">
+                  <div class="field">
+                    <label for="noticeTitleInput">Tiêu đề thông báo</label>
+                    <input id="noticeTitleInput" type="text" placeholder="Ví dụ: Chào mừng bạn đến..." />
+                  </div>
+
+                  <div class="field">
+                    <label for="noticeContentInput">Nội dung thông báo</label>
+                    <textarea id="noticeContentInput" placeholder="Nhập nội dung thông báo"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-full">Lưu thông báo</button>
+                </form>
+              </div>
+
+              <div class="admin-card">
+                <h3>Chính sách</h3>
+                <form id="policyForm" class="admin-form">
+                  <div class="field">
+                    <label for="policyBannerInput">Ảnh trang chính sách</label>
+                    <input id="policyBannerInput" type="file" accept="image/*" />
+                  </div>
+
+                  <div class="field">
+                    <label for="policyContentInput">Nội dung chính sách</label>
+                    <textarea id="policyContentInput" placeholder="Nhập nội dung chính sách"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-full">Lưu chính sách</button>
+                </form>
+              </div>
+
+              <div class="admin-card">
+                <h3>Liên hệ quảng bá</h3>
+                <form id="contactForm" class="admin-form">
+                  <div class="field">
+                    <label for="contactAddressInput">Địa chỉ</label>
+                    <input id="contactAddressInput" type="text" placeholder="Ví dụ: Việt Nam" />
+                  </div>
+
+                  <div class="field">
+                    <label for="contactPhoneInput">Số điện thoại</label>
+                    <input id="contactPhoneInput" type="text" placeholder="Ví dụ: 0399834208" />
+                  </div>
+
+                  <div class="field">
+                    <label for="contactEmailInput">Email</label>
+                    <input id="contactEmailInput" type="email" placeholder="Ví dụ: bangnguyen02@gmail.com" />
+                  </div>
+
+                  <div class="field">
+                    <label for="contactDescInput">Mô tả thêm</label>
+                    <textarea id="contactDescInput" placeholder="Nhập mô tả liên hệ"></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary btn-full">Lưu liên hệ</button>
+                </form>
+              </div>
+
+              <div class="admin-card">
+                <h3>Quản lý dữ liệu</h3>
+                <div class="admin-actions">
+                  <button id="clearProductsBtn" type="button" class="btn btn-secondary btn-full">
+                    Xoá toàn bộ sản phẩm
+                  </button>
+                  <button id="logoutDesktop" type="button" class="btn btn-secondary btn-full">
+                    Đăng xuất
+                  </button>
+                </div>
+                <p class="admin-note">
+                  Dữ liệu đang lưu bằng localStorage trên trình duyệt.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section class="section" id="productsSection">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Sản phẩm</span>
+              <h2 id="productsHeading">Tất cả sản phẩm</h2>
+            </div>
+            <p>
+              Sản phẩm chính là nhóm hiển thị. Khi bấm xem chi tiết sẽ thấy các sản phẩm con và có nút mua ngay.
+            </p>
+          </div>
+
+          <div class="category-tabs" id="categoryTabs"></div>
+
+          <div class="feature-category-title hidden" id="featureCategoryTitle">
+            <span id="featureCategoryText">Danh mục</span>
+          </div>
+
+          <div class="products-grid" id="productsGrid"></div>
+
+          <div class="empty-box" id="emptyBox">
+            <div class="empty-icon">📦</div>
+            <h3>Chưa có sản phẩm nào</h3>
+            <p>Admin hãy thêm sản phẩm từ khu quản trị.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- POLICY -->
+      <section class="section policy-section" id="policySection">
+        <div class="container">
+          <div class="policy-banner" id="policyBanner">
+            <div class="policy-banner-overlay">
+              <h2>CHÍNH SÁCH</h2>
+              <p>Trang chủ / Chính sách</p>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <div class="policy-content" id="policyContent"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact-section" id="contactSection">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Liên hệ quảng bá</span>
+              <h2>Thông tin liên hệ</h2>
+            </div>
+            <p>Thông tin này admin có thể chỉnh trong khu quản trị.</p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info-card">
+              <div class="contact-circle">📍</div>
+              <h3>Address</h3>
+              <p id="contactAddress">Việt Nam</p>
+            </div>
+
+            <div class="contact-info-card highlight">
+              <div class="contact-circle">📞</div>
+              <h3>Hotline</h3>
+              <p id="contactPhone">0399834208</p>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-circle">✉️</div>
+              <h3>Support Mail</h3>
+              <p id="contactEmail">bangnguyen02@gmail.com</p>
+            </div>
+
+            <div class="contact-info-card wide">
+              <h3>Bằng AI Tool Shop</h3>
+              <p id="contactDesc">
+                Shop trưng bày sản phẩm AI Tool, phần mềm và công cụ số. Hỗ trợ nhanh, giao diện gọn, dễ dùng trên điện thoại.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FLOAT MESSENGER -->
+    <a
+      href="https://m.me/bang.nguyen.17040"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="messenger-float"
+      aria-label="Nhắn Messenger"
+    >
+      <span class="messenger-pill">Chat hỗ trợ</span>
+      <span class="messenger-bubble">💬</span>
+    </a>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav">
+      <a href="#homeSection" class="bottom-nav-item">
+        <span>🏠</span>
+        <small>TRANG CHỦ</small>
+      </a>
+      <a href="#productsSection" class="bottom-nav-item">
+        <span>🧩</span>
+        <small>SẢN PHẨM</small>
+      </a>
+      <a href="#contactSection" class="bottom-nav-item">
+        <span>👤</span>
+        <small>THÔNG TIN</small>
+      </a>
+    </nav>
+  </div>
+
+  <!-- NOTICE MODAL -->
+  <div class="modal show" id="noticeModal">
+    <div class="modal-dialog modal-notice">
+      <div class="modal-head">
+        <strong>🔔 Thông báo</strong>
+        <button id="closeNoticeBtn" class="icon-close" aria-label="Đóng">✕</button>
+      </div>
+
+      <div class="notice-modal-body">
+        <div id="noticeModalContent"></div>
+      </div>
+
+      <div class="notice-modal-footer">
+        <button id="hideNoticeBtn" class="btn btn-danger btn-full">
+          Không hiển thị lại trong 2 giờ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL MODAL -->
+  <div class="modal" id="productModal">
+    <div class="modal-dialog modal-product">
+      <button class="icon-close icon-close-float" id="closeProductBtn" aria-label="Đóng">✕</button>
+
+      <div class="product-modal-top">
+        <h3 id="modalParentName">Tên sản phẩm</h3>
+        <p id="modalParentDesc">Nội dung sản phẩm</p>
+      </div>
+
+      <div class="product-modal-code">
+        <span>Mã sản phẩm</span>
+        <strong id="modalParentCode">CODE-000</strong>
+      </div>
+
+      <div class="product-modal-child-head">
+        <strong>Sản phẩm trong sản phẩm</strong>
+        <span id="modalChildCount">0 mục</span>
+      </div>
+
+      <div class="modal-child-list" id="modalChildList"></div>
+    </div>
+  </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
