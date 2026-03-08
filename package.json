@@ -1,0 +1,14 @@
+{
+  "name": "bang-ai-tool-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bang AI Tool Shop - Render Web Service + Render Postgres",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}
